@@ -5,6 +5,7 @@
 <body>
   <h1>Welcome to Meteor!</h1>
 
+  {{> sel}}
   {{> hello}}
   {{> info}}
 </body>
@@ -22,4 +23,11 @@
     <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
     <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
   </ul>
+</template>
+
+<template name="sel">
+    <div id="sel">
+        <h1>SELENIUM2</h1>
+        <input name="url" default="url">
+    </div>
 </template>
