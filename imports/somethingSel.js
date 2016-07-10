@@ -1,5 +1,6 @@
 
-
+console.log("#############")
+/*
 var webdriver = require('selenium-webdriver'),
     By = webdriver.By,
     until = webdriver.until;
@@ -72,5 +73,4 @@ var p = getPage('http://belmarstore.com/',
     })
 
 
-
-
+*/
