@@ -1,4 +1,4 @@
-/*
+
 
 var webdriver = require('selenium-webdriver'),
     By = webdriver.By,
@@ -73,4 +73,4 @@ var p = getPage('http://belmarstore.com/',
 
 
 
-*/
+
