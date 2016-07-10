@@ -20,3 +20,13 @@ Template.hello.events({
     instance.counter.set(instance.counter.get() + 1);
   },
 });
+
+Template.sel.events({
+  submit(event) {
+    event.preventDefault()
+    // Get value from form element
+    const target = event.target;
+    const url = target.url.value;
+    console.log("URL is", url)
+  }
+})

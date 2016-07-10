@@ -3,11 +3,7 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
   {{> sel}}
-  {{> hello}}
-  {{> info}}
 </body>
 
 <template name="hello">
@@ -27,7 +23,9 @@
 
 <template name="sel">
     <div id="sel">
-        <h1>SELENIUM2</h1>
-        <input name="url" default="url">
+        <span>Enter a URL:</span>
+        <form>
+            <input id="url" placeholder="http://">
+        </form>
     </div>
 </template>
