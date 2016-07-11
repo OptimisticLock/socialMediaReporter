@@ -1,12 +1,7 @@
+var webdriver = require('selenium-webdriver')
+    , By = webdriver.By
+    , until = webdriver.until;
 
-
-// var webdriver = require('selenium-webdriver')
-
-  //  ,
-  //  By = webdriver.By,
-  //  until = webdriver.until;
-
-/*
 
 var driver = new webdriver.Builder().forBrowser('chrome').build();
 
@@ -32,12 +27,10 @@ function getLinkTo(url, resolve, reject) {
 }
 
 
-
-
 function getPage(page, resolve, reject) {
     console.time("pageLoad")
 
-    driver.get(page).then(function(a, b)  {
+    driver.get(page).then(function (a, b) {
         console.timeEnd("pageLoad")
         console.log("Hello", a, b, arguments)
     })
@@ -45,14 +38,14 @@ function getPage(page, resolve, reject) {
     var links = Object.create(null);
 
     var urls = [
-          "https://twitter.com/"
+        "https://twitter.com/"
         , "https://www.facebook.com"
         , "https://plus.google.com"
         , "http://www.yelp.com"
         , "https://instagram.com"
     ]
 
-    var promises = urls.map(function(url) {
+    var promises = urls.map(function (url) {
         return new Promise((resolve, reject) => {
             getLinkTo(url, resolve, reject)
         })
@@ -74,6 +67,3 @@ var p = getPage('http://belmarstore.com/',
     function reject() {
         console.log("Error")
     })
-
-
-*/
