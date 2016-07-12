@@ -1,5 +1,5 @@
 import {Meteor} from 'meteor/meteor';
-import { log, getPage } from '/imports/somethingSel'
+import {log, getPage} from '/imports/somethingSel'
 
 Meteor.startup(() => {
 
@@ -22,15 +22,15 @@ Meteor.methods({
     addUrl({url, arg2}) {
 
 
-    //    console.log("add url")
-    //    return timesByTwo("kuku", 1000).catch(e => {
-    //        throw new Meteor.Error(e)
-    //    })
+        //    console.log("add url")
+        //    return timesByTwo("kuku", 1000).catch(e => {
+        //        throw new Meteor.Error(e)
+        //    })
 
 
         console.time("getPage")
 
- //       var p = getPage('http://belmarstore.com/',
+        //       var p = getPage('http://belmarstore.com/',
 
         var p = getPage(url,
             function resolve(values) {
@@ -40,21 +40,19 @@ Meteor.methods({
                 Sites.insert({
                     url,
                     createdAt: new Date(),            // current time
-       //             author: Meteor.userId(),           // _id of logged in user
-       //             lat: latLng.lat,
-       //             lng: latLng.lng,
-       //             username: username  // username of logged in user
-                      values
+                    //             author: Meteor.userId(),           // _id of logged in user
+                    //             lat: latLng.lat,
+                    //             lng: latLng.lng,
+                    //             username: username  // username of logged in user
+                    values
                 });
-            },
+            }).catch(function reject(error) {
+            console.log("Error", error)
+            var e = new Meteor.Error("Server error")
+            e.old = error
+            throw new Meteor.Error(500, 'Error 500: Not found', 'the document is not found');
 
-            function reject(error) {
-                console.log("Error", error)
-                var e = new Meteor.Error("Server error")
-                e.old = error
-                throw new Meteor.Error(500, 'Error 500: Not found', 'the document is not found');
-
-            })
+        })
 
     }
 });
