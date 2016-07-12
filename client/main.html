@@ -32,11 +32,9 @@
 </template>
 
 <template name="sites">
-    <ul>
-        {{#each sites}}
-            <li>
-                {{url}} {{values}}
-            </li>
-        {{/each}}
-    </ul>
+    {{#each sites}}
+        <div class="site">
+            <h3 class="siteUrl"> {{url}}</h3>  {{values}}
+        </div>
+    {{/each}}
 </template>
