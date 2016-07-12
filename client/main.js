@@ -45,6 +45,10 @@ Template.sel.events({
 Template.sites.helpers({
     sites: function () {
         return Sites.find({}, {sort: {createdAt: -1}})
+    },
+
+    mediaUrls: function() {
+        return "media url goes here"
     }
 })
 

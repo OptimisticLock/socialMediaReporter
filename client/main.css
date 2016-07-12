@@ -10,10 +10,13 @@
 }
 
 .siteUrl {
-    color: red;
     padding-bottom: 0px;
     padding-top: 0px;
     margin: 0px;
+}
+
+.mediaUrl {
+    margin-left: 1.5em;
 }
 
 .site {

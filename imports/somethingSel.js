@@ -4,8 +4,7 @@ var webdriver = require('selenium-webdriver')
     , By = webdriver.By
     , until = webdriver.until;
 
-
-var driver = new webdriver.Builder().forBrowser('chrome').build();
+var driver
 
 export function log(a, b) {
     console.log("Logging", a, b, arguments)
@@ -14,7 +13,7 @@ export function log(a, b) {
 
 function getLinkTo(url, resolve, reject) {
     // '[href*="twitter"]'
-    var css = `[href*="${url}"]`
+     var css = `[href*="${url}"]`
     driver.findElements(By.css(css)).then(function (links) {
 
         if (links.length > 0) {
@@ -30,8 +29,12 @@ function getLinkTo(url, resolve, reject) {
 export function getPage(page, resolve, reject) {
     console.time("pageLoad")
 
+    driver = driver || new webdriver.Builder().forBrowser('chrome').build();
+
     driver.get(page).then(function (a, b) {
         console.timeEnd("pageLoad")
+    }).catch(function(error) {
+        console.log("ERROR")
     })
 
     var links = Object.create(null);

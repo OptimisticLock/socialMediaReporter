@@ -34,7 +34,12 @@
 <template name="sites">
     {{#each sites}}
         <div class="site">
-            <h3 class="siteUrl"> {{url}}</h3>  {{values}}
+            <h3 class="siteUrl"> {{url}}</h3>
+            {{#each value in values}}
+                {{#if value}}
+                    <div class="mediaUrl"><a href="{{value}}">{{value}}</a></div>
+                {{/if}}
+            {{/each}}
         </div>
     {{/each}}
 </template>
