@@ -31,10 +31,15 @@ export function getPage(page, resolve, reject) {
 
     driver = driver || new webdriver.Builder().forBrowser('chrome').build();
 
-    driver.get(page).then(function (a, b) {
+    driver.get(page).then(function (result) {
         console.timeEnd("pageLoad")
+    }, function(error) {
+        console.log("ERRROR!!!!!")
     }).catch(function(error) {
-        console.log("ERROR")
+        console.log("ERROR", error)
+        var newError = new Error("Error getting page " + page)
+        newError.old = error
+ //       throw newError
     })
 
     var links = Object.create(null);
