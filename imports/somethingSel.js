@@ -29,7 +29,7 @@ function getLinkTo(url, resolve, reject) {
 }
 
 
-function getPage(page, resolve, reject) {
+export function getPage(page, resolve, reject) {
     console.time("pageLoad")
 
     driver.get(page).then(function (a, b) {
@@ -57,15 +57,3 @@ function getPage(page, resolve, reject) {
         resolve(values)
     })
 }
-
-console.time("getPage")
-
-var p = getPage('http://belmarstore.com/',
-    function resolve(values) {
-        console.log("Values: " + values)
-        console.timeEnd("getPage")
-    },
-
-    function reject() {
-        console.log("Error")
-    })
