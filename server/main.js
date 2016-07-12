@@ -20,10 +20,13 @@ function timesByTwo(n, delay) {
 
 Meteor.methods({
     addUrl({url, arg2}) {
-        console.log("add url")
-        return timesByTwo("kuku", 1000).catch(e => {
-            throw new Meteor.Error(e)
-        })
+
+
+    //    console.log("add url")
+    //    return timesByTwo("kuku", 1000).catch(e => {
+    //        throw new Meteor.Error(e)
+    //    })
+
 
         console.time("getPage")
 
