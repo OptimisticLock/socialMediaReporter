@@ -4,3 +4,10 @@ Meteor.startup(() => {
     import '/imports/somethingSel'
     
 });
+
+
+Meteor.methods({
+    addUrl({ url, arg2 }) {
+        console.log("kuku!", url, arg2)
+    }
+});
