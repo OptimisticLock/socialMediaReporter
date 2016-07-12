@@ -45,14 +45,14 @@ Meteor.methods({
                     //             lng: latLng.lng,
                     //             username: username  // username of logged in user
                     values
+                }, function reject(error) {
+                    console.log("Error", error)
+                    var e = new Meteor.Error("Server error")
+                    e.old = error
+                    throw new Meteor.Error(500, 'Error 500: Not found', 'the document is not found');
                 });
-            }).catch(function reject(error) {
-            console.log("Error", error)
-            var e = new Meteor.Error("Server error")
-            e.old = error
-            throw new Meteor.Error(500, 'Error 500: Not found', 'the document is not found');
+            })// can't add .catch() here
 
-        })
 
     }
 });

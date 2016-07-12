@@ -35,7 +35,7 @@ export function getPage(page, resolve, reject) {
         console.timeEnd("pageLoad")
     }, function(error) {
         console.log("ERRROR!!!!!")
-        var newError = new Error("Error getting page!!!! " + page)
+        var newError = new Meteor.Error("Error getting page!!!! " + page)
         throw newError
     })
 
