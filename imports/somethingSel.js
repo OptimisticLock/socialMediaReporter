@@ -35,11 +35,13 @@ export function getPage(page, resolve, reject) {
         console.timeEnd("pageLoad")
     }, function(error) {
         console.log("ERRROR!!!!!")
+        var newError = new Error("Error getting page!!!! " + page)
+        throw newError
     }).catch(function(error) {
         console.log("ERROR", error)
         var newError = new Error("Error getting page " + page)
         newError.old = error
- //       throw newError
+        reject(error)
     })
 
     var links = Object.create(null);

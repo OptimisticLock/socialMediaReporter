@@ -29,8 +29,12 @@ Meteor.methods({
                 });
             },
 
-            function reject() {
-                console.log("Error")
+            function reject(error) {
+                console.log("Error", error)
+                var e = new Meteor.Error("Server error")
+                e.old = error
+                throw new Meteor.Error(500, 'Error 500: Not found', 'the document is not found');
+
             })
 
     }
