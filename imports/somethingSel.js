@@ -23,18 +23,15 @@ function getLinkTo(url, resolve, reject) {
             })
         }
         else
-            resolve(url + " not found")
-
+            resolve(undefined)
     });
 }
-
 
 export function getPage(page, resolve, reject) {
     console.time("pageLoad")
 
     driver.get(page).then(function (a, b) {
         console.timeEnd("pageLoad")
-        console.log("Hello", a, b, arguments)
     })
 
     var links = Object.create(null);
