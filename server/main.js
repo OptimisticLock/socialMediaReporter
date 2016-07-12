@@ -1,13 +1,14 @@
 import { Meteor } from 'meteor/meteor';
+import { log } from '/imports/somethingSel'
+
 
 Meteor.startup(() => {
-    import '/imports/somethingSel'
-    
+
 });
 
 
 Meteor.methods({
     addUrl({ url, arg2 }) {
-        console.log("kuku!", url, arg2)
+        log("kuku!", url, arg2)
     }
 });
